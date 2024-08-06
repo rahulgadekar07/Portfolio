@@ -4,12 +4,14 @@ import "../CSS/Skills.css";
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);
-  const baseURL = "http://localhost:5000/skills/";
+  const apiUrl=process.env.REACT_APP_BASE_URL;
+
+  const baseURL = `${apiUrl}skills/`;
   
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/skills");
+        const response = await axios.get(`${apiUrl}api/skills`);
         console.log("Response data:", response.data);
         setSkills(response.data);
       } catch (error) {

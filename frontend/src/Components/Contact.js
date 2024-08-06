@@ -4,6 +4,8 @@ import "../CSS/Contact.css";
 import Spinner from "./Spinner";
 
 const Contact = () => {
+  const apiUrl=process.env.REACT_APP_BASE_URL;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,7 +53,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/contact",
+        `${apiUrl}api/contact`,
         formData
       );
       setFormStatus("Message sent successfully!");

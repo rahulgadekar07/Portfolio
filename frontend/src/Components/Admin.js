@@ -9,6 +9,7 @@ const AddProjectForm = () => {
   const [technologies, setTechnologies] = useState("");
   const [link, setLink] = useState("");
   const [image, setImage] = useState(null);
+  const apiUrl=process.env.REACT_APP_BASE_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +23,7 @@ const AddProjectForm = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/projects", {
+      const response = await fetch(`${apiUrl}api/projects`, {
         method: "POST",
         body: formData,
       });

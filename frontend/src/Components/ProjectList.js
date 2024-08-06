@@ -4,9 +4,10 @@ import "../CSS/ProjectList.css";
 
 const ProjectList = () => {
   const [projects, setProjects] = useState([]);
+  const apiUrl=process.env.REACT_APP_BASE_URL;
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/projects")
+    fetch(`${apiUrl}api/projects`)
       .then((response) => response.json())
       .then((data) => setProjects(data))
       .catch((error) => console.error("Error fetching projects:", error));

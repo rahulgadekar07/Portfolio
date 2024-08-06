@@ -2,7 +2,9 @@ import React from 'react';
 
 const ProjectCard = ({ project }) => {
   // Base URL for the backend (ensure this matches your backend URL)
-  const baseURL = 'http://localhost:5000/uploads/';
+  const apiUrl=process.env.REACT_APP_BASE_URL;
+
+  const baseURL = `${apiUrl}uploads/`;
 
   return (
     <div className="project-card">

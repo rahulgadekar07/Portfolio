@@ -5,7 +5,7 @@ const AddSkillForm = () => {
   const [skillName, setSkillName] = useState('');
   const [imageFile, setImageFile] = useState(null);
   const [masteryLevel, setMasteryLevel] = useState(0);
-
+  const apiUrl=process.env.REACT_APP_BASE_URL;
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file && file.type === "image/png") {
@@ -38,7 +38,7 @@ const AddSkillForm = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/skills', {
+      const response = await fetch(`${apiUrl}api/skills`, {
         method: 'POST',
         body: formData,
       });

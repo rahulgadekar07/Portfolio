@@ -10,10 +10,11 @@ const ShowMessages = () => {
     message: ''
   });
   const [showReplyModal, setShowReplyModal] = useState(false);
+  const apiUrl=process.env.REACT_APP_BASE_URL;
 
   useEffect(() => {
     const fetchMessages = async () => {
-      const response = await axios.get('http://localhost:5000/api/contact');
+      const response = await axios.get(`${apiUrl}api/contact`);
       setMessages(response.data);
     };
     fetchMessages();
@@ -31,7 +32,7 @@ const ShowMessages = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/send-reply', replyData);
+      await axios.post(`${apiUrl}api/send-reply`, replyData);
       setShowReplyModal(false);
       setReplyData({ email: '', subject: '', message: '' });
     } catch (error) {
