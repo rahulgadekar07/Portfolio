@@ -1,0 +1,103 @@
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+  /* padding: 50px; */
+  padding: 4rem 3rem;
+  background-color: #001f3f;
+ 
+}
+
+.admin-content {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 3rem 1rem ;
+  margin: 2rem 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.h1 {
+  color: #001f3f;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start ;
+  min-height: 70vh;
+  flex-direction: column;
+  max-width: 400px;
+  margin: auto;
+}
+
+input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  background-color: #004094;
+}
+.star-rating {
+  display: flex;
+  flex-direction: row; /* Change to column to stack label and stars */
+  align-items: center;
+}
+
+.star-rating label {
+  margin-right: 5px; /* Add spacing between label and stars */
+  font-size: 1rem; /* Adjust font size as needed */
+  color: #666; /* Adjust color as needed */
+}
+
+.star1 {
+  font-size: 24px; /* Increased font size for larger stars */
+  cursor: pointer;
+  color: #d1bcbc;
+}
+
+.star1.selected {
+  color: rgb(38, 157, 25);
+}
+@media (max-width: 768px) {
+  .admin-container {
+    flex-direction: column; /* Stack content vertically on smaller screens */
+    padding-top: 2rem;
+    margin-top: 2rem;
+  }
+
+  .admin-content {
+    width: 100%; /* Make content full width */
+    
+    max-width: 80vw;
+  }
+}

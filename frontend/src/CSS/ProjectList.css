@@ -1,0 +1,158 @@
+#projects {
+  padding: 1rem;
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling on the container */
+}
+
+#projects h1 {
+  font-size: xx-large;
+  color: rgb(12, 7, 7);
+  font-family: "Graduate", serif;
+  margin-bottom: 2rem;
+
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* Ensure cards wrap on smaller screens */
+  justify-content: center;
+  align-items: flex-start;
+  /* Align items at the start */
+  gap: 2rem;
+  /* Add spacing between cards */
+  overflow-y: auto;
+  /* Allow vertical scrolling if needed */
+  max-height: calc(100vh - 4rem);
+  /* Limit the height of the container */
+}
+
+.project-card {
+  background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 430px;
+  max-height: 430px;
+  /* Ensure all cards have a minimum height */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Added box-shadow transition for smooth effect */
+  overflow: hidden;
+  /* Hide overflowed content within the card */
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  /* Lift the card up on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Increase shadow size on hover */
+}
+
+.project-card img {
+  width: 100%;
+  /* Ensure image fits container width */
+  height: 150px;
+  /* Fixed height for consistency */
+  object-fit: cover;
+  /* Ensure image covers area without distortion */
+  border-radius: 8px 8px 0 0;
+}
+
+
+.project-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  color: black;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  padding: 0rem 2rem;
+  max-height: 100px;
+  /* Limit the height of the description area */
+  max-width: 80%;
+  /* Limit the height of the description area */
+  overflow-y: auto;
+  /* Enable vertical scrolling for overflowed content */
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.project-card a:hover {
+  background-color: #0056b3;
+  cursor: url('../../public/icons8-hand-cursor-20.png'), pointer;
+}
+
+/* Basic scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: transparent;
+  /* Transparent background for a cleaner look */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3498db, #2980b9);
+  /* Blue gradient */
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  /* Subtle white border */
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  /* Transparent track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2980b9, #1f759e);
+  /* Darker hover state */
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(to bottom, #1f759e, #156aa9);
+  /* Even darker active state */
+}
+
+@media (max-width: 425px) {
+  .projectList {
+     
+    display: flex;
+    flex-direction: column;
+  }
+  /* Adjust for small screens (phones) */
+  .projects-container {
+   
+    
+    max-width: 400px;
+    max-height: 500px;
+  }
+
+  .project-card {
+    /* Adjust card width to full width */
+    max-width: 70vw;
+
+  }
+
+  .project-card img {
+    /* Adjust image size or remove */
+    width: 300px;
+    height:100px;
+  }
+
+  /* Other adjustments for smaller screens */
+}

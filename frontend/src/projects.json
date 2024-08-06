@@ -1,0 +1,17 @@
+[
+    {
+      "title": "Ankur ScholorHub",
+      "description": "An Android application for searching car rides and updating car journey details. Allows passengers to find available rides and car owners to update their ride details.",
+      "image": "./Picture1.jpg",
+      "technologies":"MySQL, Bootstrap, ReactJS, NodeJS",
+      "link": "http://project1.com"
+    },
+    {
+      "title": "Project 2",
+      "description": "Description for project 2",
+      "image": "./images.png",
+      "link": "http://project2.com"
+    }
+    
+  ]
+  

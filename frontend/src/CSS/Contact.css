@@ -1,0 +1,114 @@
+#contact {
+    padding: 2rem 1rem;
+    background: linear-gradient(179.4deg, rgb(12, 20, 69) -16.9%, rgb(71, 30, 84) 119.9%);
+  }
+  
+  #contact h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: gold;
+    font-family: "Graduate", serif;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: radial-gradient(506px at 50.6% 16.5%, rgb(239, 252, 250) 5.5%, rgb(154, 192, 206) 100.2%);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: black;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 80%;
+    padding: 0.75rem;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .form-group input.error,
+  .form-group textarea.error {
+    border-color: #e74c3c;
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    height: 120px;
+  }
+  
+  button[type="submit"] {
+    display: inline-block;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: url('../../public/icons8-hand-cursor-20.png'), pointer;
+    transition: background 0.3s ease;
+    width: 80%;
+  }
+  
+  button[type="submit"]:hover {
+    background: #218838;
+  }
+  .custom-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeInOut 3s forwards;
+  }
+  
+  .custom-alert.success {
+    background-color: #28a745;
+  }
+  
+  .custom-alert.error {
+    background-color: #dc3545;
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    10% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    90% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+  
