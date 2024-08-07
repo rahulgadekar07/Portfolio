@@ -12,7 +12,9 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 connectDB();
-
+app.get('/', (req, res) => {
+  res.send('Hello World from Portfolio backend!');
+});
 app.use(cors());
 app.use(express.json());
 
