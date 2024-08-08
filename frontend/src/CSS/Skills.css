@@ -49,7 +49,6 @@
 }
 
 .skill-logo-container {
-  background: #fff;
   padding: 10px;
   border-radius: 8px;
 }
@@ -71,7 +70,7 @@
 
 .star2 {
   font-size: 1.5rem;
-  color: #ccc;
+  color: #cccccc;
   margin: 0 2px;
 }
 
@@ -79,6 +78,21 @@
   color: #f39c12;
 }
 
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+
+.p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #f9f9f9;
+}
+
+/* Floating Animation for skill cards */
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
