@@ -92,3 +92,17 @@
     display: block;
   }
 }
+#myphoto{
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 50%;
+  margin-right: 0.7rem;
+  margin-top: 0.5rem;
+  cursor:url('../../public/icons8-hand-cursor-20.png'), pointer;
+
+}
+#nameh2{
+  display: flex;
+    align-items: center;
+  
+}

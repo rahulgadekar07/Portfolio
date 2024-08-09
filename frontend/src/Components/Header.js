@@ -1,11 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import '../CSS/Header.css';
+import React, { useState, useEffect } from "react";
+import "../CSS/Header.css";
+import ImageModal from './ImageModal';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   let lastScrollTop = 0;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState('');
 
+  const openModal = (imageSrc) => {
+    setSelectedImage(imageSrc);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage('');
+  };
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -23,25 +35,57 @@ const Header = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <header className={`header ${isHeaderVisible ? 'visible' : 'hidden'}`}>
-      <h2>Rahul Gadekar</h2>
-      <button className='hamburger' onClick={toggleMenu}>
+    <header className={`header ${isHeaderVisible ? "visible" : "hidden"}`}>
+        {isModalOpen && (
+        <ImageModal 
+          src={selectedImage} 
+          alt="Full size view" 
+          onClose={closeModal} 
+        />
+      )}
+      <h2 id="nameh2">
+        {" "}
+        <div>
+          <img src="id_size_photo.jpeg" alt="myPhoto" id="myphoto"  onClick={() => openModal('id_size_photo.jpeg')}  />
+        </div>
+        <div>
+        Rahul Gadekar
+
+        </div>
+      </h2>
+      <button className="hamburger" onClick={toggleMenu}>
         ☰
       </button>
-      <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
+      <nav className={`nav ${isMenuOpen ? "open" : ""}`}>
         <ul>
-          <li><a href="#about" onClick={closeMenu}>About</a></li>
-          <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
-          <li><a href="#skills" onClick={closeMenu}>Skills</a></li>
-          <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
+          <li>
+            <a href="#about" onClick={closeMenu}>
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#projects" onClick={closeMenu}>
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="#skills" onClick={closeMenu}>
+              Skills
+            </a>
+          </li>
+          <li>
+            <a href="#contact" onClick={closeMenu}>
+              Contact
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
