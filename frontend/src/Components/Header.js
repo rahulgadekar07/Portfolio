@@ -77,6 +77,11 @@ const Header = () => {
             </a>
           </li>
           <li>
+            <a href="#certifications" onClick={closeMenu}>
+              Certifications
+            </a>
+          </li>
+          <li>
             <a href="#skills" onClick={closeMenu}>
               Skills
             </a>
@@ -86,6 +91,7 @@ const Header = () => {
               Contact
             </a>
           </li>
+         
         </ul>
       </nav>
     </header>

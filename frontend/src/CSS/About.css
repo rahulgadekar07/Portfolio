@@ -12,7 +12,7 @@
 #about h1 {
   font-size: xx-large;
   font-family: "Graduate", serif;
-  margin: 0;
+  margin-bottom: 1rem;
   color: black;
 }
 

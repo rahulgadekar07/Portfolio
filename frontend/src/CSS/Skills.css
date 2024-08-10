@@ -17,7 +17,7 @@
 .skills-container {
   display: flex;
   flex-wrap: wrap;
-  max-width: 80vw;
+  max-width: 60vw;
   justify-content: center;
   gap: 2rem;
 }
@@ -55,7 +55,8 @@
 
 .skill-logo {
   max-width: 100px;
-  margin-bottom: 1rem;
+  min-height: 80px;
+  max-height: 80px;
 }
 
 .skill-name {

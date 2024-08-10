@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Skills from './Components/Skills';
 import ScrollToTopButton from './Components/ScrollToTopButton';
 import Contact from './Components/Contact';
+import Certifications from './Components/Certifications';
 
 function App() {
   
@@ -19,7 +20,7 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/" element={<><Intro /><About /><ProjectList /><Skills/><Contact/><ScrollToTopButton/><Footer /></>} />
+          <Route path="/" element={<><Intro /><About /><ProjectList /><Certifications/><Skills/><Contact/><ScrollToTopButton/><Footer /></>} />
           <Route path="/admin" element={<Admin />} />
          
         </Routes>

@@ -74,10 +74,11 @@
 
 .project-card p {
   font-size: 0.9rem;
-  padding: 0rem 2rem;
+  padding-left:  1rem;
+  margin: 0.5rem;
   max-height: 100px;
   /* Limit the height of the description area */
-  max-width: 80%;
+  max-width: 90%;
   /* Limit the height of the description area */
   overflow-y: auto;
   /* Enable vertical scrolling for overflowed content */
@@ -85,17 +86,76 @@
 
 .project-card a {
   display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #007bff;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(145deg, #007bff, #0056b3);
   color: #fff;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 6px;
+  cursor: url('../../public/icons8-hand-cursor-20.png'), pointer;
+
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease; /* Smooth transition for all properties */
+}
+
+.project-card a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+  transition: all 0.4s ease;
+  transform: skewX(30deg);
+}
+
+.project-card a:hover::before {
+  left: 150%;
 }
 
 .project-card a:hover {
-  background-color: #0056b3;
-  cursor: url('../../public/icons8-hand-cursor-20.png'), pointer;
+  background: linear-gradient(145deg, #0056b3, #007bff); /* Reverse gradient on hover */
+  transform: translateY(-4px) scale(1.05); /* Lift and scale effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 91, 255, 0.5); /* Enhanced shadow with glow */
+}
+
+.project-card a:active {
+  transform: translateY(2px) scale(0.98); /* Slight depress effect when clicked */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Reduced shadow on click */
+}
+
+.project-card a::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card a:hover::after {
+  opacity: 1;
+  animation: glow 1.5s infinite;
+}
+
+/* Keyframes for glowing effect */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(0, 91, 255, 0.5), 0 0 10px rgba(0, 91, 255, 0.5), 0 0 15px rgba(0, 91, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 91, 255, 0.7), 0 0 25px rgba(0, 91, 255, 0.7), 0 0 35px rgba(0, 91, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(0, 91, 255, 0.5), 0 0 10px rgba(0, 91, 255, 0.5), 0 0 15px rgba(0, 91, 255, 0.5);
+  }
 }
 
 /* Basic scrollbar styling */
@@ -138,7 +198,7 @@
   .projects-container {
    
     
-    max-width: 400px;
+    max-width: 380px;
     max-height: 500px;
   }
 
@@ -147,11 +207,20 @@
     max-width: 70vw;
 
   }
+  .project-card p{
+    /* Adjust card width to full width */
+   margin: 1rem 2rem 1rem 2.2rem;
+   padding: 0;
+   max-width:  70vw;
+   max-height:  65px;
+   font-size: small;
+
+  }
 
   .project-card img {
     /* Adjust image size or remove */
-    width: 300px;
-    height:100px;
+    width: 250px;
+    height:150px;
   }
 
   /* Other adjustments for smaller screens */
@@ -185,3 +254,23 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+

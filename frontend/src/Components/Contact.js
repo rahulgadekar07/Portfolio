@@ -59,7 +59,7 @@ const Contact = () => {
       setFormStatus("Message sent successfully!");
       setFormData({ name: "", email: "", subject: "", message: "" });
       setErrors({});
-      showAlert("success", "Message sent successfully!");
+      showAlert("success", "Message sent successfully! Check Your Inbox for Acknowledgement");
     } catch (error) {
       console.error("Error sending message:", error);
       setFormStatus("Failed to send message. Please try again.");
@@ -139,10 +139,11 @@ const Contact = () => {
               <div className="error-message">{errors.message}</div>
             )}
           </div>
-
+          {loading ? <Spinner /> :  
           <button type="submit">
-            {loading ? <Spinner /> : "Send Message"}
+            Send Message
           </button>
+          }
         </form>
         {/* {formStatus && <div className="form-status">{formStatus}</div>} */}
       </div>

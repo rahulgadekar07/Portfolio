@@ -57,22 +57,59 @@
     height: 120px;
   }
   
-  button[type="submit"] {
-    display: inline-block;
-    background: #28a745;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    cursor: url('../../public/icons8-hand-cursor-20.png'), pointer;
-    transition: background 0.3s ease;
-    width: 80%;
-  }
-  
-  button[type="submit"]:hover {
-    background: #218838;
-  }
+/* Define custom properties for pulse effect */
+:root {
+  --pulse-color: #28a745; /* Color for the pulse effect */
+  --pulse-hover: #218838; /* Darker color for hover effect */
+}
+
+/* Basic button styles */
+button[type="submit"],
+button[type="reset"] {
+  background: none;
+  border: 2px solid var(--pulse-color);
+  color: var(--pulse-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: url('../../public/icons8-hand-cursor-20.png'), pointer;
+
+  transition: color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+
+/* Pulse effect for both Send and Clear buttons */
+button[type="submit"]:hover,
+button[type="submit"]:focus,
+button[type="reset"]:hover,
+button[type="reset"]:focus {
+  box-shadow: 0 0 0 2em rgba(0, 0, 0, 0.1);
+  border-color: var(--pulse-hover);
+  color: var(--pulse-hover);
+  animation: pulse 1.5s forwards;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--pulse-color); }
+  50% { box-shadow: 0 0 0 1.5em rgba(0, 0, 0, 0.1); }
+  100% { box-shadow: 0 0 0 0 var(--pulse-color); }
+}
+
+/* Reset button specific styles */
+button[type="reset"] {
+  background: none;
+  border-color: #dc3545; /* Color for the Clear button */
+  color: #dc3545;
+}
+
+button[type="reset"]:hover,
+button[type="reset"]:focus {
+  border-color: #c82333;
+  color: #c82333;
+}
+
   .custom-alert {
     position: fixed;
     top: 20px;
@@ -110,5 +147,63 @@
       opacity: 0;
       transform: translateX(100%);
     }
+  }
+  .button_wrapper {
+    position: relative;
+    width: 100%; /* Adjust to fit your form's layout */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .contact_button {
+    display: block;
+    width: 80%; /* Adjust according to your needs */
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    background: #28a745;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 3px solid #28a745;
+    transition: all 0.35s;
+    cursor: url('../../public/icons8-hand-cursor-20.png'), pointer;
+    border-radius: 4px;
+  }
+  
+  .contact_button:hover {
+    width: 75%;
+    border-color: #218838;
+    background: transparent;
+    color: #218838;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+    border: 3px solid transparent;
+    position: absolute;
+    transform: rotate(45deg);
+    right: 0;
+    top: 0;
+    z-index: -1;
+    transition: all 0.35s;
+  }
+  
+  .icon svg {
+    width: 30px;
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    transform: rotate(-45deg);
+    fill: #218838;
+    transition: all 0.35s;
+  }
+  
+  .contact_button:hover + .icon {
+    border-color: #218838;
+    right: -25%;
   }
   

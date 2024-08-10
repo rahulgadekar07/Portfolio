@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../CSS/Admin.css";
 import AddSkillForm from "./AddSkillsForm";
 import ShowMessages from "../Components/ShowMessages";
+import AddCertificationForm from "./AddCertificationForm";
 
 const AddProjectForm = () => {
   const [title, setTitle] = useState("");
@@ -93,6 +94,9 @@ const Admin = () => {
         </div>
         <div>
           <AddSkillForm />
+        </div>
+        <div>
+          <AddCertificationForm/>
         </div>
       </div>
 

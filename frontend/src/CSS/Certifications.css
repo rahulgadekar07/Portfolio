@@ -1,0 +1,184 @@
+.certifications-section {
+  padding: 1rem;
+  background-color: #130f40;
+  background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);
+  overflow-x: hidden;
+}
+
+.certifications-section h2 {
+  font-size: xx-large;
+  color: gold;
+  font-family: "Graduate", serif;
+  margin-bottom: 2rem;
+}
+
+.certifications-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.certification-card {
+  background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  height: 400px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.certification-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.certificate-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  transition: box-shadow 0.3s, border 0.3s;
+  cursor: url('../../public/icons8-hand-cursor-20.png'), pointer;
+}
+
+.certificate-image:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.certification-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.certification-card p {
+  font-size: 0.9rem;
+  padding: 0rem 1rem;
+  max-height: 90px;
+  overflow-y: auto;
+  margin-bottom: 1rem; /* Add margin to create space between text and button */
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.buttons_verify {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.blob-btn {
+  z-index: 1;
+  position: relative;
+  padding: 12px 24px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ff6f00;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: color 0.5s;
+  cursor: url('../../public/icons8-hand-cursor-20.png'), pointer;
+  border-radius: 30px;
+  overflow: hidden;
+  text-decoration: none; /* Remove underline */
+}
+
+.blob-btn:before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #ff6f00;
+  border-radius: 30px;
+}
+
+.blob-btn:after {
+  content: "";
+  z-index: -2;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff6f00, #ff944d);
+  transition: all 0.3s 0.2s;
+  border-radius: 30px;
+}
+
+.blob-btn:hover {
+  color: white;
+  border-radius: 30px;
+}
+
+.blob-btn:hover:after {
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+}
+
+.blob-btn__inner {
+  z-index: -1;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background: #ffffff;
+}
+
+.blob-btn__blobs {
+  position: relative;
+  display: block;
+  height: 100%;
+  filter: url('#goo');
+}
+
+.blob-btn__blob {
+  position: absolute;
+  top: 2px;
+  width: 25%;
+  height: 100%;
+  background: #ff6f00;
+  border-radius: 100%;
+  transform: translate3d(0, 150%, 0) scale(1.4);
+  transition: transform 0.45s;
+}
+
+.blob-btn__blob:nth-child(1) { left: 0; transition-delay: 0s; }
+.blob-btn__blob:nth-child(2) { left: 25%; transition-delay: 0.08s; }
+.blob-btn__blob:nth-child(3) { left: 50%; transition-delay: 0.16s; }
+.blob-btn__blob:nth-child(4) { left: 75%; transition-delay: 0.24s; }
+
+.blob-btn:hover .blob-btn__blob {
+  transform: translate3d(0, 0, 0) scale(1.4);
+}
+@media (max-width: 425px) {
+  .certifications-section{
+    max-height: 500px;
+    padding: 20px 10px;
+  }
+  .certificate-image {
+    max-width: 300px;
+        max-height: 150px;
+  }
+  .certification-card p{
+    font-size: smaller;
+    max-height:70px;
+  }
+}
