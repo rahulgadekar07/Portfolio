@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../CSS/Intro.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,6 +7,7 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import CustomAlert from "./CustomAlert";
 
 const generateStarStyles = () => {
   const stars = [];
@@ -14,6 +15,7 @@ const generateStarStyles = () => {
     const size = Math.random() * 3 + 1 + "px";
     const top = Math.random() * 100 + "vh";
     const left = Math.random() * 100 + "vw";
+    
     stars.push(
       <div
         className="star"
@@ -70,17 +72,37 @@ const SocialMediaButtons = () => {
 };
 
 const ResumeButton = () => {
-  const handleDownload = () => {
-    console.log(process.env.REACT_APP_BASE_URL);
+  const [showAlert, setShowAlert] = useState(false);
 
+  const handleDownload = () => {
+    setShowAlert(true);
+  };
+
+  const handleAlertClose = () => {
+    setShowAlert(false);
+  };
+
+  const handleConfirm = () => {
+    setShowAlert(false);
     window.open(`${process.env.REACT_APP_BASE_URL}public/resume.pdf`, "_blank");
   };
+
   return (
-    <button className="glow-on-hover" onClick={handleDownload}>
-      View Resume
-    </button>
+    <>
+      <button className="glow-on-hover" onClick={handleDownload}>
+        View Resume
+      </button>
+      {showAlert && (
+        <CustomAlert
+          message="Backend is hosted on Render which may take 50-60 seconds to load. Please wait until it loads."
+          onConfirm={handleConfirm}
+          onClose={handleAlertClose}
+        />
+      )}
+    </>
   );
 };
+
 const Intro = () => {
   const stars = generateStarStyles();
 
