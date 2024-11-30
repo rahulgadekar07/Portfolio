@@ -8,21 +8,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .modal-content {
+    z-index: 9999;
+}
+
+.modal-content {
     background: transparent;
-    /* padding: 20px; */
     border-radius: 8px;
     position: relative;
-  }
-  
-  .modal-content img {
+}
+
+.modal-content img {
     width: 100%;
     max-height: 80vh;
-  }
-  
-  .modal-close {
+}
+
+.modal-close {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -32,5 +32,4 @@
     border-radius: 50%;
     cursor: pointer;
     padding: 5px 10px;
-  }
-  
+}
